@@ -1,16 +1,9 @@
-from account import Account
-from studentAccount import StudentAccount
-from businessAccount import BusinessAccount
-from personalAccount import PersonalAccount
-
-
-#create
-#Each field type asks for input
-
-#Account created
+from menu import Menu
+from accountBuilder import AccountBuilder
 
 #display options (deposit - withdraw - view balance)
 
+# Get User Input
 inputs = {
     'name' : "",
     'age' : "",
@@ -20,27 +13,10 @@ inputs = {
 for key, value in inputs.items():
     inputs[key] = input(f"please provide {key}: ")
 
+# Build Account
+acc_builder = AccountBuilder() 
+acc = acc_builder.build(inputs['acc_type'], inputs['name'], inputs['age'])
 
-#create instance of account class
-acc = None
-
-if inputs['acc_type'] == 'personal':
-    acc = PersonalAccount(inputs['name'],inputs["age"])
-
-
-if inputs['acc_type'] == "business":
-    acc = BusinessAccount(inputs['name'],inputs["age"])
-
-
-if inputs['acc_type'] == "student":
-    acc = StudentAccount(inputs['name'],inputs["age"])
-
-
-
-print('Option 1: withdraw')
-print('option 2: deposit')
-print('option 3: display balance')
-choice = input("Please choose an option : ")
-
-
-#account type based off the key value for acc_type
+# Disaplay UI
+ui = Menu(acc)
+ui.start_menu()

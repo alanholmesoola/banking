@@ -11,7 +11,7 @@ inputs = {
 }
 
 for key, value in inputs.items():
-    inputs[key] = input(f"please provide {key}: ")
+    inputs[key] = input(f"\nplease provide {key}: ")
 
 # Build Account
 acc_builder = AccountBuilder() 

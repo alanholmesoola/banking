@@ -12,21 +12,33 @@ class Menu:
 
         choice = 0
 
+        #while loop for menu dispay
         while choice != "4":
-            print('Option 1: withdraw')
+            print('\nOption 1: withdraw')
             print('option 2: deposit')
             print('option 3: display balance')
-            print('option 4: Exit')
+            print('option 4: Exit\n')
 
             choice = input("Please choose an option : ")
-
+            
+            #menu choice with value error catch
             if choice == '1':
-                amount = input("How much?: ")
-                self.acc.withdraw(int(amount))
-                
+            #Withdraw    
+                try:
+                    amount = int(input("How much?: "))
+                    print(amount)
+                except ValueError:
+                    print('\n Please enter a number')
+                else:
+                        self.acc.withdraw(int(amount))
+            #deposit
             if choice == '2':
-                amount = input("How much?: ")
-                self.acc.deposit(int(amount))
+                try:
+                    amount = int(input("How much?: "))
+                except ValueError:   
+                    print('\n Please enter a number')
+                else:
+                    self.acc.deposit(int(amount))
             
             if choice == "3":
                 self.acc.showBalance()

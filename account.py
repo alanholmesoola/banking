@@ -10,13 +10,13 @@ class Account:
 
     def showBalance(self):
         balance = self.balance
-        print(f"balance is : {balance}")
+        print(f"\nbalance is : {balance}")
 
     def deposit(self, amount):
         self.balance += amount
 
     def withdraw(self, amount):
         if self.balance < amount:
-            print("Sorry Insifficent Funds")
+            print("\nSorry Insifficent Funds\n")
         else:
             self.balance -= amount

@@ -5,8 +5,8 @@ class Account:
         self.age = age
         self.balance = 0
         self.overdraft = 0
-        
-#functions for transactios
+
+# functions for transactios
 
     def showBalance(self):
         balance = self.balance

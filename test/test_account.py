@@ -2,14 +2,14 @@ from app.account import Account
 
 import unittest
 
-class TestAccount(Account.TestCase):
+class TestAccount(unittest.TestCase):
 
 #Positive Cases
 
     def deposit(self):
         # Arrange
         account = Account("Alan","33")
-        expected_result = "100"
+        expected_result = 100
         
         # Act
         account.deposit(100)

@@ -2,7 +2,7 @@ import unittest
 from app.accountBuilder import AccountBuilder
 
 
-class TestAccountBuilder(unittest.TestCase):
+class TestBuilder(unittest.TestCase):
 
     # Positive Cases
     def test_business_account(self):

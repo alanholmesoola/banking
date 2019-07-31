@@ -27,19 +27,20 @@ class Menu:
                 # Withdraw
                 try:
                     amount = int(input("How much?: "))
-                    print(amount)
                 except ValueError:
-                    print('\n Please enter a number')
+                    print('\n Please enter a number\n')
                 else:
-                        self.acc.withdraw(int(amount))
+                    withdrawString = self.acc.withdraw(int(amount))
+                    print(withdrawString)
             # deposit
             if choice == '2':
                 try:
                     amount = int(input("How much?: "))
                 except ValueError:
-                    print('\n Please enter a number')
+                    print('\n Please enter a number\n')
                 else:
                     self.acc.deposit(int(amount))
 
-            if choice == "3":
-                self.acc.showBalance()
+            if choice == '3':
+                balance = self.acc.showBalance()
+                print(f"\nBalance is : {balance}")

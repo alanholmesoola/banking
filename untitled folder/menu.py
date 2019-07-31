@@ -41,5 +41,6 @@ class Menu:
                 else:
                     self.acc.deposit(int(amount))
 
-            if choice == "3":
-                self.acc.showBalance()
+            if choice == '3':
+                balance = self.acc.showBalance()
+                print(f"\nBalance is : {balance}")

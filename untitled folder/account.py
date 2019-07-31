@@ -10,7 +10,7 @@ class Account:
 
     def showBalance(self):
         balance = self.balance
-        print(f"\nbalance is : {balance}\n")
+        return balance
 
     def deposit(self, amount):
         self.balance += amount

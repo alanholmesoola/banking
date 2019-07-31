@@ -9,14 +9,16 @@ class Account:
 # functions for transactios
 
     def showBalance(self):
-        balance = self.balance
-        print(f"\nbalance is : {balance}")
+        return self.balance
 
     def deposit(self, amount):
         self.balance += amount
 
     def withdraw(self, amount):
+        withdrawString = ""
         if self.balance < amount:
-            print("\nSorry Insifficent Funds\n")
+            withdrawString = "Sorry insufficent funds"
         else:
             self.balance -= amount
+            withdrawString = f"Balance is: {self.balance}"
+        return withdrawString

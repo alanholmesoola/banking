@@ -1,7 +1,7 @@
-from account import Account
-from studentAccount import StudentAccount
-from businessAccount import BusinessAccount
-from personalAccount import PersonalAccount
+from app.account import Account
+from app.studentAccount import StudentAccount
+from app.businessAccount import BusinessAccount
+from app.personalAccount import PersonalAccount
 
 
 class Menu:

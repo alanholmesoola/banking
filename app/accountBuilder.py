@@ -1,6 +1,6 @@
-from studentAccount import StudentAccount
-from businessAccount import BusinessAccount
-from personalAccount import PersonalAccount
+from app.studentAccount import StudentAccount
+from app.businessAccount import BusinessAccount
+from app.personalAccount import PersonalAccount
 
 
 class AccountBuilder:

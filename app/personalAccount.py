@@ -1,4 +1,4 @@
-from account import Account
+from app.account import Account
 
 
 class PersonalAccount(Account):

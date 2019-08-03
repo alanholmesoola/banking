@@ -1,9 +1,9 @@
 class Account:
 
-    def __init__(self, name, age):
+    def __init__(self, name, age, balance=0):
         self.name = name
         self.age = age
-        self.balance = 0
+        self.balance = balance
         self.overdraft = 0
 
 # functions for transactios

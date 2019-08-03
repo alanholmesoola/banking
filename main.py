@@ -1,22 +1,17 @@
 from app.menu import Menu
 from app.accountBuilder import AccountBuilder
+from app.database import AccountDatabase
 
-# display options (deposit - withdraw - view balance)
 
-# Get User Input
-inputs = {
-    'name': "",
-    'age': "",
-    'acc_type': 0
-}
+try:
+    name = (input("Please provide account name: "))
+    accountList = AccountDatabase()
+    currentAccount = accountList.load_account_by_account_name(name)
+except Exception:
+    print('\n Not an account\n')
+else:
+    ui = Menu(currentAccount)
+    ui.start_menu()
 
-for key, value in inputs.items():
-    inputs[key] = input(f"\nplease provide {key}: ")
-
-# Build Account
-acc_builder = AccountBuilder()
-acc = acc_builder.build(inputs['acc_type'], inputs['name'], inputs['age'])
-
-# Disaplay UI
-ui = Menu(acc)
-ui.start_menu()
+# write to json on exit
+accountList.save_account_by_account_name(name, currentAccount.balance)

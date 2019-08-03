@@ -15,10 +15,20 @@ class AccountDatabase():
                 account = self.builder.build(
                     account['account_type'],
                     account['account_holder'],
-                    account['age'])
+                    account['age'],
+                    account['amount'])
                 return account
 
         raise Exception('Account not found error')
+
+    def save_account_by_account_name(self, account_name, balance):
+        all_accounts = self._read()
+
+        for account in all_accounts['accounts']:
+            if account['account_holder'].lower() == account_name.lower():
+                account['amount'] = balance
+
+        self._write(all_accounts)
 
     def _read(self):
         data = None

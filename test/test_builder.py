@@ -4,6 +4,7 @@ from app.studentAccount import StudentAccount
 from app.businessAccount import BusinessAccount
 from app.personalAccount import PersonalAccount
 from app.accountBuilder import AccountBuilder
+from parameterized import parameterized
 
 
 class TestBuilder(unittest.TestCase):
@@ -29,3 +30,14 @@ class TestBuilder(unittest.TestCase):
         observed_class = account_builder.build('student', 'Alan', 22)
         # Assert
         self.assertIsInstance(observed_class, StudentAccount)
+
+    @parameterized([
+        ("business", BusinessAccount),
+        ("personal", PersonalAccount),
+        ("student", StudentAccount),
+    ])
+    def test_accounts_using_builder_parameterised(self, userInput, expected):
+        # arrange
+        observed_class = account_builder.build(userInput, 'Alan', 22)
+        # assert
+        self.assertIsInstance(observed_class, expected)
